@@ -50,29 +50,12 @@ Parameters: ~80.
 
 📊 Key Results
 
-Metric
+| Metric | Deep Model (L=9) | Shallow Model (L=2) |
+| :--- | :--- | :--- |
+| **Parameters** | 81 | 79 |
+| **Approximation Error** | Near Zero | High (Oscillations missed) |
+| **Representation** | Perfectly captures all 16 peaks | Smooths out high-frequency details |
 
-Deep Model (L=9)
-
-Shallow Model (L=2)
-
-Parameters
-
-81
-
-79
-
-Approximation Error
-
-Near Zero
-
-High (Oscillations missed)
-
-Representation
-
-Perfectly captures all 16 peaks.
-
-Smooths out high-frequency details.
 
 Conclusion: Depth is a fundamental requirement for representing complex, oscillatory logic. The shallow model fails to generate enough linear regions to fit the target, proving that width is not a substitute for depth in terms of expressivity efficiency.
 
