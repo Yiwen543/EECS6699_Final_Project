@@ -34,6 +34,22 @@ class ModelBuilder(nn.Module):
         self.net = nn.Sequential(*layers)
         self.depth = depth
         self.width = width
+        self._init_weights()
+
+    def _init_weights(self) -> None:
+        """Kaiming-normal for hidden ReLU layers; Xavier for the output layer.
+
+        PyTorch's default kaiming_uniform_(a=sqrt(5)) gives std≈0.2 for W=8
+        hidden layers, which is too small for 9-layer nets and reliably causes
+        dying ReLU at initialisation. kaiming_normal_ with fan_in mode gives
+        std=sqrt(2/fan_in), roughly 2.5× larger, which keeps activations alive.
+        """
+        linears = [m for m in self.net if isinstance(m, nn.Linear)]
+        for m in linears[:-1]:
+            nn.init.kaiming_normal_(m.weight, mode="fan_in", nonlinearity="relu")
+            nn.init.zeros_(m.bias)
+        nn.init.xavier_normal_(linears[-1].weight)
+        nn.init.zeros_(linears[-1].bias)
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:  # noqa: D401
         return self.net(x)

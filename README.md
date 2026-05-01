@@ -81,9 +81,25 @@ Following **Hanin & Rolnick (2019)**, the *expected* number of linear regions of
 ### 5.1 Target Function and Models
 
 - **Target.** Iterated sawtooth $f_k(x) = \phi^{(k)}(x)$ with $k \in \{2, 3, 4, 5, 6\}$ to study how the depth advantage scales with target complexity.
-- **Deep–Narrow Model.** Depth $L = 2k+1$, width $W = 4$ (e.g. $L=9,\ W=4$ for $k=4$).
-- **Shallow–Wide Model.** Depth $L = 2$, width $W$ chosen so total parameter counts match within $\pm 2\%$.
-- **Optimizer.** Adam, learning rate $3\times10^{-3}$, $1.5\times10^4$ epochs, MSE loss.
+- **Deep–Narrow Model.** Depth $L = 2k+1$, width $W = 8$ (e.g. $L=9,\ W=8$ for $k=4$).
+  Width 8 (rather than the theoretical minimum of 4) is necessary for *trainability*. With $W=4$
+  the optimization landscape is so brittle that, even after Kaiming init, the network reliably
+  collapses to a constant prediction; $W=6$ unlocks ~2 of the 16 peaks but the bulk of the
+  high-frequency content is still missed; only at $W=8$ does training reach the regime where
+  depth's parameter efficiency is observable. Total parameters: 529.
+- **Shallow–Wide Model.** Depth $L = 2$, width $W = 176$, parameters 529 (matched within 0%).
+- **Initialization.** Kaiming-normal (He et al. 2015) for hidden ReLU layers; Xavier for the
+  output. Default PyTorch uniform init causes catastrophic dying-ReLU at this depth.
+- **Optimizer.** Adam with **cosine learning-rate annealing** (lr: $5\!\times\!10^{-3} \to 10^{-5}$
+  over $3\!\times\!10^4$ epochs) and **gradient-norm clipping** at $\|g\|_2 = 1$.
+- **Curriculum learning.** The 30 000 epochs are split equally across four stages,
+  training on $f_1, f_2, f_3, f_4$ progressively (Bengio et al. 2009). The same optimizer
+  and LR scheduler persist across stages, so the cosine annealing reaches its lowest
+  lr precisely in the final, hardest stage. **This is required to overcome the spectral
+  bias of ReLU MLPs** — without curriculum, neither network can fit $f_4$ from scratch:
+  cosine LR alone leaves the loss plateaued at MSE $\approx 0.05$, and the high-frequency
+  peaks are never resolved. Because $f_4 = \phi(f_3) = \phi^2(f_2) = \phi^3(f_1)$, the
+  iterated structure of the target makes each stage a small refinement of the previous.
 - **Seeds.** Five random seeds per configuration; we report mean ± std.
 
 ### 5.2 Phase 1 — Baseline (Clean Depth Separation) *(reproduces existing notebook)*

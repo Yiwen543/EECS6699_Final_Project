@@ -1,0 +1,7 @@
+{
+  "deep_degradation_at_max_sigma": 0.02566249211988918,
+  "shallow_degradation_at_max_sigma": 0.0033818021416664123,
+  "deep_degrades_more": true,
+  "deep_gap_deviates_above_baseline": false,
+  "H3_supported": true
+}

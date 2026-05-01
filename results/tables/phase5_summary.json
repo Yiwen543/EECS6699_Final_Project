@@ -1,0 +1,17 @@
+{
+  "deep_lip_fd_mean": 31.581967163085938,
+  "deep_lip_fd_std": 11.420432480395885,
+  "shallow_lip_fd_mean": 14.594301414489745,
+  "shallow_lip_fd_std": 2.018677137376262,
+  "lip_fd_ratio": 2.1639930727845753,
+  "deep_lip_spec_mean": 97256.8537781861,
+  "shallow_lip_spec_mean": 402.20916774621617,
+  "lip_spec_ratio": 241.80665578352185,
+  "deep_regions_mean": 31.6,
+  "shallow_regions_mean": 23.4,
+  "region_ratio": 1.3504273504273505,
+  "paired_ttest_t": 2.7205442327633977,
+  "paired_ttest_pval": 0.02647854821866831,
+  "deep_lip_higher_all_seeds": true,
+  "H5_supported": true
+}

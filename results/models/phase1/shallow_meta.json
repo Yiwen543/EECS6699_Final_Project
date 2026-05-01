@@ -1,0 +1,62 @@
+[
+  {
+    "seed": 0,
+    "depth": 2,
+    "width": 176,
+    "params": 529,
+    "deep_depth": 9,
+    "deep_width": 8,
+    "deep_params": 529,
+    "shallow_depth": 2,
+    "shallow_width": 176,
+    "shallow_params": 529
+  },
+  {
+    "seed": 1,
+    "depth": 2,
+    "width": 176,
+    "params": 529,
+    "deep_depth": 9,
+    "deep_width": 8,
+    "deep_params": 529,
+    "shallow_depth": 2,
+    "shallow_width": 176,
+    "shallow_params": 529
+  },
+  {
+    "seed": 2,
+    "depth": 2,
+    "width": 176,
+    "params": 529,
+    "deep_depth": 9,
+    "deep_width": 8,
+    "deep_params": 529,
+    "shallow_depth": 2,
+    "shallow_width": 176,
+    "shallow_params": 529
+  },
+  {
+    "seed": 3,
+    "depth": 2,
+    "width": 176,
+    "params": 529,
+    "deep_depth": 9,
+    "deep_width": 8,
+    "deep_params": 529,
+    "shallow_depth": 2,
+    "shallow_width": 176,
+    "shallow_params": 529
+  },
+  {
+    "seed": 4,
+    "depth": 2,
+    "width": 176,
+    "params": 529,
+    "deep_depth": 9,
+    "deep_width": 8,
+    "deep_params": 529,
+    "shallow_depth": 2,
+    "shallow_width": 176,
+    "shallow_params": 529
+  }
+]

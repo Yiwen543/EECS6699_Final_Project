@@ -1,0 +1,6 @@
+{
+  "theory_eps_star": 0.0625,
+  "fgsm_eps_star": 0.05,
+  "pgd_eps_star": 0.05,
+  "H4_supported": true
+}
