@@ -1,0 +1,98 @@
+{
+  "k_values": [
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "epochs_per_k": {
+    "2": 60000,
+    "3": 30000,
+    "4": 30000,
+    "5": 40000,
+    "6": 50000
+  },
+  "k2": {
+    "k": 2,
+    "depth": 5,
+    "peaks": 4,
+    "epochs": 60000,
+    "theory_crossover": 0.25,
+    "deep_mse_mu": 1.3856884942609463e-10,
+    "deep_mse_sd": 2.7679490789641046e-10,
+    "shallow_mse_mu": 2.1920295162347615e-10,
+    "shallow_mse_sd": 1.683657859015379e-10,
+    "sigma_star": null,
+    "eps_star_fgsm": null,
+    "sigma_star_over_theory": null,
+    "eps_star_over_theory": null
+  },
+  "k3": {
+    "k": 3,
+    "depth": 7,
+    "peaks": 8,
+    "epochs": 30000,
+    "theory_crossover": 0.125,
+    "deep_mse_mu": 0.026204267783463565,
+    "deep_mse_sd": 0.026170131669371443,
+    "shallow_mse_mu": 0.03570353575050831,
+    "shallow_mse_sd": 0.01146631072935004,
+    "sigma_star": 0.05,
+    "eps_star_fgsm": 0.12,
+    "sigma_star_over_theory": 0.4,
+    "eps_star_over_theory": 0.96
+  },
+  "k4": {
+    "k": 4,
+    "depth": 9,
+    "peaks": 16,
+    "epochs": 30000,
+    "theory_crossover": 0.0625,
+    "deep_mse_mu": 0.027797962334761905,
+    "deep_mse_sd": 0.024816968088053976,
+    "shallow_mse_mu": 0.04210978671908379,
+    "shallow_mse_sd": 0.0085526064176051,
+    "sigma_star": 0.018,
+    "eps_star_fgsm": 0.03,
+    "sigma_star_over_theory": 0.288,
+    "eps_star_over_theory": 0.48
+  },
+  "k5": {
+    "k": 5,
+    "depth": 11,
+    "peaks": 32,
+    "epochs": 40000,
+    "theory_crossover": 0.03125,
+    "deep_mse_mu": 0.0712921604514122,
+    "deep_mse_sd": 0.013527966089756706,
+    "shallow_mse_mu": 0.07182315289974213,
+    "shallow_mse_sd": 0.0025291074960558223,
+    "sigma_star": 0.008,
+    "eps_star_fgsm": 0.018,
+    "sigma_star_over_theory": 0.256,
+    "eps_star_over_theory": 0.576
+  },
+  "k6": {
+    "k": 6,
+    "depth": 13,
+    "peaks": 64,
+    "epochs": 50000,
+    "theory_crossover": 0.015625,
+    "deep_mse_mu": 0.08347216248512268,
+    "deep_mse_sd": 0.0,
+    "shallow_mse_mu": 0.0803249090909958,
+    "shallow_mse_sd": 0.0009683610170740937,
+    "sigma_star": null,
+    "eps_star_fgsm": null,
+    "sigma_star_over_theory": null,
+    "eps_star_over_theory": null
+  }
+}
